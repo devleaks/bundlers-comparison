@@ -1,0 +1,12 @@
+@import "normalize.css";
+@import "typeface-roboto";
+
+html, body, #root {
+  height: 100%;
+  font-family: Roboto, serif;
+}
+
+body {
+  /* Reference an image file */
+  background: url('./images/background2.jpg');
+}

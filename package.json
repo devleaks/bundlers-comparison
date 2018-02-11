@@ -1,0 +1,38 @@
+{
+  "name": "bundler-comparison",
+  "version": "0.0.0",
+  "description": "Comparison of popular frontend bundlers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clear": "rimraf .cache && rimraf dist",
+    "parcel": "node ./bundlers/parcel/node_modules/.bin/parcel",
+    "parcel:serve": "npm run parcel src/index.html",
+    "parcel:build": "npm run clear && npm run parcel build src/index.html -- --public-url ./"
+  },
+  "author": "PBelugin",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "babel-preset-react-app": "^3.1.1",
+    "postcss-modules": "^1.1.0",
+    "rimraf": "^2.6.2",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "animejs": "^2.2.0",
+    "lodash": "^4.17.5",
+    "material-ui": "^1.0.0-beta.33",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "normalize.css": "^8.0.0",
+    "react": "^16.2.0",
+    "react-anime": "^2.1.0",
+    "react-dom": "^16.2.0",
+    "typeface-roboto": "0.0.54"
+  },
+  "standard": {
+    "autoprefixer": "^7.2.6",
+    "postcss-modules": "^1.1.0",
+    "parser": "babel-eslint"
+  }
+}

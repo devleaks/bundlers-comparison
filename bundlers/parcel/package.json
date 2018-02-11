@@ -1,0 +1,14 @@
+{
+  "name": "bundler-comparison-parcel",
+  "version": "0.0.0",
+  "description": "Part of bundler-comparison.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PBelugin",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.5.1"
+  }
+}
