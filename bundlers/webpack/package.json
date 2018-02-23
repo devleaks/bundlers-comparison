@@ -1,0 +1,25 @@
+{
+  "name": "bundler-comparison-webpack",
+  "version": "0.0.0",
+  "description": "Part of bundler-comparison.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PBelugin",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "css-loader": "^0.28.10",
+    "file-loader": "^1.1.9",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.20.2",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1",
+    "write-file-webpack-plugin": "^4.2.0"
+  }
+}
