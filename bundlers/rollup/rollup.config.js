@@ -5,8 +5,7 @@ import babel from 'rollup-plugin-babel'
 import globals from 'rollup-plugin-node-globals'
 import replace from 'rollup-plugin-replace'
 import html from 'rollup-plugin-fill-html'
-import rebasePlugin from "rollup-plugin-rebase"
-import url from "rollup-plugin-url"
+import url from 'rollup-plugin-url'
 import postcss from 'rollup-plugin-postcss'
 import postcssImport from 'postcss-import'
 import postcssUrl from './plugins/postcssUrl'
@@ -26,25 +25,21 @@ Object.assign(Paths, {
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
 const production = !process.env.ROLLUP_WATCH
-const rebase = rebasePlugin({
-  outputFolder: Paths.DIST,
-  input: Paths.INPUT,
-})
 
 export default {
   input: Paths.INPUT,
   output: {
     file: Paths.OUTPUT,
     format: 'iife', // immediately-invoked function expression — suitable for <script> tags
-    // sourcemap: true
+    sourcemap: true
   },
   plugins: [
     html({
       template: `${Paths.SRC}/template.html`,
       filename: 'index.html'
     }),
-    // rebase,
     postcss({
+      sourceMap: 'inline',
       modules: true,
       plugins: [
         postcssImport(),
