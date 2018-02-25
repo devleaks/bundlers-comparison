@@ -4,11 +4,12 @@ import uglify from 'rollup-plugin-uglify'
 import babel from 'rollup-plugin-babel'
 import globals from 'rollup-plugin-node-globals'
 import replace from 'rollup-plugin-replace'
-import postcss from 'rollup-plugin-postcss'
-import postcssAssets from 'postcss-assets'
 import html from 'rollup-plugin-fill-html'
 import rebasePlugin from "rollup-plugin-rebase"
 import url from "rollup-plugin-url"
+import postcss from 'rollup-plugin-postcss'
+import postcssImport from 'postcss-import'
+import postcssUrl from './plugins/postcssUrl'
 
 process.env.NODE_ENV = 'development'
 
@@ -32,7 +33,6 @@ const rebase = rebasePlugin({
 
 export default {
   input: Paths.INPUT,
-  // external: rebase.isExternal,
   output: {
     file: Paths.OUTPUT,
     format: 'iife', // immediately-invoked function expression — suitable for <script> tags
@@ -47,9 +47,11 @@ export default {
     postcss({
       modules: true,
       plugins: [
-        postcssAssets({
-          loadPaths: ['**'],
-          relativeTo: Paths.SRC
+        postcssImport(),
+        ...postcssUrl({
+          basePath: [Paths.SRC, Paths.NODE_MODULES],
+          assetsPath: Paths.DIST + '/assets',
+          dest: Paths.DIST
         })
       ]
     }),
