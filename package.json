@@ -10,7 +10,11 @@
     "parcel:serve": "npm run parcel src/index.html -- -d ./dist/parcel -p 3000",
     "parcel:build": "npm run clear && npm run parcel build src/index.html -- --public-url ./ -d ./dist/parcel",
     "webpack:serve": "node ./bundlers/webpack/node_modules/.bin/webpack-dev-server --config ./bundlers/webpack/webpack.config.js --port 3000",
-    "webpack:build": "node ./bundlers/webpack/node_modules/.bin/webpack --config ./bundlers/webpack/webpack.config.dist.js"
+    "webpack:build": "node ./bundlers/webpack/node_modules/.bin/webpack --config ./bundlers/webpack/webpack.config.dist.js",
+    "rollup": "node ./bundlers/rollup/node_modules/.bin/rollup --config ./bundlers/rollup/rollup.config.js",
+    "rollup:watch": "npm run rollup -- -w",
+    "rollup:start": "node ./bundlers/rollup/node_modules/.bin/serve dist-rollup",
+    "rollup:serve": "node ./bundlers/rollup/node_modules/.bin/npm-run-all --parallel rollup:watch rollup:start"
   },
   "author": "PBelugin",
   "license": "ISC",
